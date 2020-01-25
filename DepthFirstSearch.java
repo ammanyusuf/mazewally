@@ -35,15 +35,15 @@ public class DepthFirstSearch {
         colour[u] = "grey";
         
         // Iterate through the neighbours of u
-        LinkedList<Integer> neighbours = G.adjacencyListOf(u);
+        LinkedList<Integer> neighboursOfu = G.adjacencyListOf(u);
         
-        while (neighbours.hasNext()) {
-            Integer v_Integer = neighbours.next();
+        for(int j = 0; j < neighboursOfu.size(); j++) {
+            Integer v_Integer = neighboursOfu.get(j);
             int v = v_Integer.intValue();
             
             if (colour[v].equals("white")) {
                 predecessor[v] = u;
-                dfs.visit(G, v);
+                dfs_visit(G, v);
             }
             
             time = time + 1;
