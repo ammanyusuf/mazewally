@@ -9,17 +9,17 @@ public class DepthFirstSearch {
     private int[] finishTime;
     private int time;
 
-    public dfs(Graph G) {
+    public void dfs(Graph G) {
     
         // Initialize all the verticies in the graph to be white, and set the predecessor to null
-        for (int i = 0, i < G.numOfV(), i++) {
+        for (int i = 0; i < G.numOfV(); i++) {
             colour[i] = "white";
-            predecessor[i] = null;
+            predecessor[i] = -1;
         }
         
         time = 0;
         
-        for (int i = 0, i < G.numOfV(), i++) {
+        for (int i = 0; i < G.numOfV(); i++) {
             
             // if the colour of the vertex is white, continue with a depth first search visit on that vertex
             if (colour[i].equals("white")) {
@@ -29,7 +29,7 @@ public class DepthFirstSearch {
     
     }
     
-    public dfs_visit(Graph G, u) {
+    public void dfs_visit(Graph G, int u) {
         time = time + 1;
         discoveryTime[u] = time;
         colour[u] = "grey";

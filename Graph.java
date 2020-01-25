@@ -13,7 +13,7 @@ public class Graph {
         verticies = vertex_num;
         
         // Creade an empty adjacency list for each vertex in the graph
-        for (int i = 0, i < vertex_num; i++) {
+        for (int i = 0; i < vertex_num; i++) {
         
             adjacencyList[i] = new LinkedList();
         
