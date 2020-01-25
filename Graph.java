@@ -12,11 +12,11 @@ public class Graph {
     // Constructor
     public Graph(int vertex_num) {
         verticies = vertex_num;
-        
+        adjacencyList = new ArrayList<LinkedList<Integer>>(10);
         // Creade an empty adjacency list for each vertex in the graph
         for (int i = 0; i < vertex_num; i++) {
         
-            adjacencyList.set(i, new LinkedList());
+            adjacencyList.add(i, new LinkedList());
         
         }
     }

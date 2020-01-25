@@ -3,12 +3,19 @@ import java.util.LinkedList;
 
 public class DepthFirstSearch {
 
-    private int[] predecessor;
+    public int[] predecessor;
     private String[] colour;
     private int[] discoveryTime;
     private int[] finishTime;
     private int time;
 
+	public DepthFirstSearch(){
+		this.predecessor = new int[10];
+		this.colour = new String[10];
+		this.discoveryTime = new int[10];
+		this.finishTime = new int[10];
+		this.time = 0;
+	}
     public void dfs(Graph G) {
     
         // Initialize all the verticies in the graph to be white, and set the predecessor to null
