@@ -1,11 +1,12 @@
 import java.io.*; 
 import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class Graph {
     
     private int verticies;
     
-    private LinkedList<Integer> adjacencyList[];
+    private ArrayList<LinkedList<Integer>> adjacencyList;
     
     
     // Constructor
@@ -15,7 +16,7 @@ public class Graph {
         // Creade an empty adjacency list for each vertex in the graph
         for (int i = 0; i < vertex_num; i++) {
         
-            adjacencyList[i] = new LinkedList();
+            adjacencyList.get(i) = new LinkedList();
         
         }
     }
@@ -25,7 +26,7 @@ public class Graph {
     }
     
     public LinkedList<Integer> adjacencyListOf(int u) {
-        return adjacencyList[u];
+        return adjacencyList.get(u);
     }
     
     // Methods
@@ -37,11 +38,11 @@ public class Graph {
     */
     public void addPath(int a, int b) {
         
-        if (adjacencyList[a].contains(b) || adjacencyList[b].contains(a)) {
+        if (adjacencyList.get(a).contains(b) || adjacencyList.get(b).contains(a)) {
             System.out.println("Path already exists between vertex " + a + " and vertex " + b);
         } else {
-            adjacencyList[a].add(b);    // Add b to a's adjacency list
-            adjacencyList[b].add(a);    // Add a to b's adjacency list
+            adjacencyList.get(a).add(b);    // Add b to a's adjacency list
+            adjacencyList.get(b).add(a);    // Add a to b's adjacency list
         }
     }        
     
@@ -52,9 +53,9 @@ public class Graph {
     */
     public void removePath(int a, int b) {
         
-        if (adjacencyList[a].contains(b) && adjacencyList[b].contains(a)) {
-            adjacencyList[a].remove(b);    // Remove b to a's adjacency list
-            adjacencyList[b].remove(a);    // Remove a to b's adjacency list
+        if (adjacencyList.get(a).contains(b) && adjacencyList.get(b).contains(a)) {
+            adjacencyList.get(a).remove(b);    // Remove b to a's adjacency list
+            adjacencyList.get(b).remove(a);    // Remove a to b's adjacency list
         } else {
             System.out.println("There is no edge between vertex " + a + " and vertex " + b);
         }
