@@ -16,7 +16,7 @@ public class Graph {
         // Creade an empty adjacency list for each vertex in the graph
         for (int i = 0; i < vertex_num; i++) {
         
-            adjacencyList.get(i) = new LinkedList();
+            adjacencyList.set(i, new LinkedList());
         
         }
     }
